@@ -53,8 +53,8 @@ jobs:
           
       - shell: cmd
         run: |
-          curl https://github.com/dirkarnez/portaudio-prebuilt/releases/download/v19.7.0/portaudio-v19.7.0-mingw64-x86_64-posix-seh-rev0-8.1.0.zip -L -O &&^
-          7z.exe x portaudio-v19.7.0-mingw64-x86_64-posix-seh-rev0-8.1.0.zip -o"portaudio-v19.7.0-mingw64-x86_64-posix-seh-rev0-8.1.0"
+          curl https://github.com/dirkarnez/fdk-aac-prebuilt/releases/download/v2.0.3/fdk-aac-v2.0.3-x86_64-8.1.0-release-posix-seh-rt_v6-rev0.zip -L -O &&^
+          7z.exe x fdk-aac-v2.0.3-x86_64-8.1.0-release-posix-seh-rt_v6-rev0.zip -o"fdk-aac-v2.0.3-x86_64-8.1.0-release-posix-seh-rt_v6-rev0"
 
       # - shell: cmd
       #   run: |
@@ -90,7 +90,7 @@ jobs:
             cmake.exe -G"MinGW Makefiles" ^
             -DCMAKE_BUILD_TYPE=Release ^
             -DBUILD_SHARED_LIBS=OFF ^
-            -Dportaudio_DIR="%CD_LINUX%/portaudio-v19.7.0-mingw64-x86_64-posix-seh-rev0-8.1.0/lib/cmake/portaudio" ^
+            -Dfdk-aac_DIR="%CD_LINUX%/fdk-aac-v2.0.3-x86_64-8.1.0-release-posix-seh-rt_v6-rev0/lib/cmake/fdk-aac" ^
             -B./cmake-build &&^
             cd cmake-build && cmake --build . --config Release
 
